@@ -25,10 +25,7 @@ function cambiarColorLineas() {
   dibujarCuadricula();
 }
 
-function cambiarColorNumeros() {
-  colorNumeros = document.getElementById('colorNumeros').value;
-  dibujarCuadricula();
-}
+
 function formatearNumero(numero) {
     return numero < 10 ? '0' + numero : numero.toString();
       }
@@ -36,10 +33,7 @@ function formatearNumero(numero) {
 
       
 
-imagen.onload = function() {
 
-    contexto.drawImage(imagen, 0, 0, portada-4, (portada-4));
-}
 
 // Dibujar cuadrícula con colores iniciales
 dibujarCuadricula();
