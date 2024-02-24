@@ -19,10 +19,6 @@ var imagen = new Image();
 imagen.src = 'rifa.png';
 
 
-function cambiarColorFondo() {
-  colorFondo = document.getElementById('colorFondo').value;
-  dibujarCuadricula();
-}
 
 function cambiarColorLineas() {
   colorLineas = document.getElementById('colorLineas').value;
@@ -50,7 +46,7 @@ dibujarCuadricula();
 
 function dibujarCuadricula() {
             // Elimina la imagen de fondo existente si hay una
-            contexto.clearRect(0, 0, portada-4, portada-4);
+            //contexto.clearRect(0, 0, portada-4, portada-4);
   // Dibujar el rectángulo de fondo
   contexto.fillStyle = colorFondo;
   contexto.fillRect(0, 0, canvas.width, canvas.height);
