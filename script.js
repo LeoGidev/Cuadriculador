@@ -43,9 +43,9 @@ function dibujarCuadricula() {
       contexto.strokeStyle = colorLineas;
       
       contexto.moveTo(0,y);
-      console.log(x);
+      //console.log(x);
       contexto.lineTo(x,y);
-      console.log(y);
+      //console.log(y);
       contexto.stroke();
       //contexto.strokeRect(x, y, 100, 100);
     
@@ -62,9 +62,9 @@ function dibujarCuadricula() {
     contexto.strokeStyle = colorLineas;
     
     contexto.moveTo(x,0);
-    console.log(x);
+    //console.log(x);
     contexto.lineTo(x,y);
-    console.log(y);
+    //console.log(y);
     contexto.stroke();
     //contexto.strokeRect(x, y, 100, 100);
   
@@ -86,8 +86,22 @@ function cargarImagenDeFondo() {
   if (archivo) {
     var imagenFondo = new Image();
     imagenFondo.onload = function () {
+        var ancho = imagenFondo.width;
+        var alto = imagenFondo.height;
+        console.log(ancho, alto);
+        if(alto > ancho){
+            anchoproporcional = (ancho * canvas.width)/alto;
+            contexto.drawImage(imagenFondo, 0, 0, anchoproporcional ,canvas.height)
+        }
+        else{
       // Dibuja la imagen de fondo
-      contexto.drawImage(imagenFondo, 0, 0, canvas.width, canvas.height);
+      //altoproporcional = (alto * canvas.width)/ancho;
+      //contexto.drawImage(imagenFondo, 0, 0, canvas.width, altoproporcional);
+      factor=alto/ancho;
+      var nuevoAncho = window.innerWidth * factor;
+    canvas.width = nuevoAncho;
+    contexto.drawImage(imagenFondo, 0, 0, canvas.width, canvas.height);
+        }
       
       // Dibuja la cuadrícula después de cargar la nueva imagen
       dibujarCuadricula();
