@@ -1,0 +1,18 @@
+ul {
+    list-style-type: none; /* Elimina el estilo predeterminado de las viñetas */
+    padding: 0; /* Elimina el espacio interior predeterminado de la lista */
+    margin: 0; /* Elimina el margen predeterminado de la lista */
+  }
+  #portada{
+    position:absolute;
+    top: 60px !important;
+    background-color: rgb(72, 69, 179);
+    color: white;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 18px;
+    height: 100px;
+  }
+  #carton{
+    position: relative;
+    top: 180px !important;
+  }
