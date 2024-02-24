@@ -97,10 +97,14 @@ function cargarImagenDeFondo() {
       // Dibuja la imagen de fondo
       //altoproporcional = (alto * canvas.width)/ancho;
       //contexto.drawImage(imagenFondo, 0, 0, canvas.width, altoproporcional);
-      factor=alto/ancho;
-      var nuevoAncho = window.innerWidth * factor;
-    canvas.width = nuevoAncho;
-    contexto.drawImage(imagenFondo, 0, 0, canvas.width, canvas.height);
+        factor=ancho/alto;
+        console.log('ancho/alto:', ancho, '/', alto, '=', ancho/alto);
+        var nuevoAncho = window.innerWidth * factor;
+        var nuevoAlto = window.innerHeight * factor;
+        console.log('Nuevo ancho: ', nuevoAncho, 'Nuevo alto: ', nuevoAlto);
+        canvas.width = nuevoAncho;
+        canvas.height= nuevoAlto;
+        contexto.drawImage(imagenFondo, 0, 0, canvas.width, canvas.height);
         }
       
       // Dibuja la cuadrícula después de cargar la nueva imagen
