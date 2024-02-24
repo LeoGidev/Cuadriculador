@@ -2,13 +2,14 @@ var canvas = document.getElementById('miCanvas');
 var contexto = canvas.getContext('2d');
 
 var tamanoCuadro = 200;
-var cuadrosPorLado = 10;
+var cuadrosPorLado = 3;
 var tamañoTotal = tamanoCuadro * cuadrosPorLado;
-var portada = 200;
+//var portada = 0;
 
 var colorFondo = '#ffffff';
 var colorLineas = '#00ff00';
 var colorNumeros = '#000000';
+var ancholinea = 4;
 
 
 var imagen = new Image();
@@ -31,17 +32,43 @@ function cambiarColorLineas() {
 
 function dibujarCuadricula() {
   // Dibujar la cuadrícula y los números
-  for (var i = 0; i < cuadrosPorLado; i++) {
-    for (var j = 0; j < cuadrosPorLado; j++) {
-      var x = i * tamanoCuadro * (canvas.width / tamañoTotal);
-      var y = j * tamanoCuadro * ((canvas.height - portada) / tamañoTotal);
+  for (var i = 0; i < 4; i++) {
+    
+      var x = canvas.width;
+      var y = (canvas.height/4)*i;
+      
 
       // Dibujar el cuadro en el canvas con el nuevo color de líneas
-      contexto.lineWidth = 5;
+      contexto.lineWidth = ancholinea;
       contexto.strokeStyle = colorLineas;
-      contexto.strokeRect(x, y + portada, (canvas.width) / 10, (canvas.height - portada) / 10);
-    }
+      
+      contexto.moveTo(0,y);
+      console.log(x);
+      contexto.lineTo(x,y);
+      console.log(y);
+      contexto.stroke();
+      //contexto.strokeRect(x, y, 100, 100);
+    
   }
+   // Dibujar la cuadrícula y los números
+   for (var i = 0; i < 4; i++) {
+    
+    var x = (canvas.width/3)*i;
+    var y = (canvas.height);
+    
+
+    // Dibujar el cuadro en el canvas con el nuevo color de líneas
+    contexto.lineWidth = ancholinea;
+    contexto.strokeStyle = colorLineas;
+    
+    contexto.moveTo(x,0);
+    console.log(x);
+    contexto.lineTo(x,y);
+    console.log(y);
+    contexto.stroke();
+    //contexto.strokeRect(x, y, 100, 100);
+  
+}
 }
 
 // Función para descargar la imagen
