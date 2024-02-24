@@ -9,7 +9,7 @@ var tamañoTotal = tamanoCuadro * cuadrosPorLado;
 var colorFondo = '#ffffff';
 var colorLineas = '#00ff00';
 var colorNumeros = '#000000';
-var ancholinea = 4;
+var ancholinea = 2;
 
 
 var imagen = new Image();
@@ -92,6 +92,12 @@ function cargarImagenDeFondo() {
         if(alto > ancho){
             //anchoproporcional = (ancho * canvas.width)/alto;
             //contexto.drawImage(imagenFondo, 0, 0, anchoproporcional ,canvas.height)
+            canvas.width=400;
+            canvas.height=400;
+            factor=alto/ancho;
+            var nuevoAlto=canvas.height*factor;
+            canvas.height=nuevoAlto;
+            contexto.drawImage(imagenFondo, 0, 0, canvas.width, canvas.height)
         }
         else{
       // Dibuja la imagen de fondo
