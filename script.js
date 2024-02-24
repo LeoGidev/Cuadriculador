@@ -19,38 +19,16 @@ var imagen = new Image();
 imagen.src = 'rifa.png';
 
 
-function cambiarColorFondo() {
-  colorFondo = document.getElementById('colorFondo').value;
-  dibujarCuadricula();
-}
+
 
 function cambiarColorLineas() {
   colorLineas = document.getElementById('colorLineas').value;
   dibujarCuadricula();
 }
 
-function cambiarColorNumeros() {
-  colorNumeros = document.getElementById('colorNumeros').value;
-  dibujarCuadricula();
-}
-function formatearNumero(numero) {
-    return numero < 10 ? '0' + numero : numero.toString();
-      }
 
-function cambiarTitulo() {
-        titulo = document.getElementById('titulo').value;
-        dibujarCuadricula();
-      }
-      
-function cambiarDescripcion() {
-        descripcion = document.getElementById('descripcion').value;
-        dibujarCuadricula();
-      }
 
-function cambiarValor() {
-        valor = 'valor= '+ document.getElementById('valor').value;
-        dibujarCuadricula();
-      }
+
 imagen.onload = function() {
 
     contexto.drawImage(imagen, 0, 0, portada-4, (portada-4));
