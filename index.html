@@ -26,38 +26,38 @@
 </head>
 <body>
 
-  <div class="container-fluid">
-    <div class="row border" id="portada">
-      <div class="col-12">
-        <h1>Cuadricular imagen</h1>
+    <div class="container-fluid">
+      <div class="row border" id="portada">
+        <div class="col-12">
+          <h1>Cuadricular imagen</h1>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-xl-6">
-        <!-- Contenedor del canvas -->
-        
+      <div class="row">
+        <div class="col-12 col-xl-6">
+          <!-- Contenedor del canvas -->
           <canvas id="miCanvas" width="400" height="700" style="border:1px solid #000;" name="tablero"></canvas>
-       
-      </div>
-      <div class="col-12 col-xl-6 mt-3">
-        <ul>
-          
-        <li>
-          <label for="colorLineas">Color de las líneas:</label>
-          <input class=" form-control form-control-color" type="color" id="colorLineas" value="#00ff00" onchange="cambiarColorLineas()"></li>
-        
-        <li><label for="valor">Imagen:</label>
-             <input class="form-control" type="file" id="imagenFondoInput" accept="image/*" onchange="dibujarCuadricula()"></li>
-  
-          <!-- Botón para descargar la imagen -->
-          <li><button class="btn btn-primary m-3" onclick="descargarImagen()">Descargar Imagen</button></li>
-          
-
+        </div>
+        <div class="col-12 col-xl-6 mt-3">
+          <ul>
+            <li>
+              <label for="colorLineas">Color de las líneas:</label>
+              <input class="form-control form-control-color" type="color" id="colorLineas" value="#00ff00" onchange="cambiarColorLineas()">
+            </li>
+            <li>
+              <label for="valor">Imagen:</label>
+              <input class="form-control" type="file" id="imagenFondoInput" accept="image/*" onchange="dibujarCuadricula()">
+            </li>
+            <!-- Botón para descargar la imagen -->
+            <li>
+              <button class="btn btn-primary m-3" onclick="descargarImagen()">Descargar Imagen</button>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
   
-  <script src="script.js"></script>
+    <script src="script.js"></script>
   
   </body>
   </html>
+  
