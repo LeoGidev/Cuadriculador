@@ -32,7 +32,7 @@ function cambiarColorLineas() {
 
 function dibujarCuadricula() {
   // Dibujar la cuadrícula y los números
-  for (var i = 0; i < 4; i++) {
+  for (var i = 0; i < 5; i++) {
     
       var x = canvas.width;
       var y = (canvas.height/4)*i;
@@ -51,9 +51,9 @@ function dibujarCuadricula() {
     
   }
    // Dibujar la cuadrícula y los números
-   for (var i = 0; i < 4; i++) {
+   for (var i = 0; i < 5; i++) {
     
-    var x = (canvas.width/3)*i;
+    var x = (canvas.width/4)*i;
     var y = (canvas.height);
     
 
