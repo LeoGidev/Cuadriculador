@@ -1,50 +1,35 @@
 var canvas = document.getElementById('miCanvas');
 var contexto = canvas.getContext('2d');
 
-// Tamaño de cada cuadro 
 var tamanoCuadro = 200;
 var cuadrosPorLado = 10;
 var tamañoTotal = tamanoCuadro * cuadrosPorLado;
 var portada = 200;
 
-// Inicializar colores
 var colorFondo = '#ffffff';
 var colorLineas = '#00ff00';
 var colorNumeros = '#000000';
-//otras variables
-var titulo = 'Título';
-var descripcion = 'Descripción';
-var valor='Valor=';
+
+
 var imagen = new Image();
 imagen.src = 'rifa.png';
 
+// Esperar a que la imagen de fondo se cargue antes de dibujar
+imagen.onload = function () {
+  // Dibuja la imagen de fondo
+  contexto.drawImage(imagen, 0, 0, canvas.width, canvas.height);
 
+  // Dibuja la cuadrícula
+  dibujarCuadricula();
+};
 
 function cambiarColorLineas() {
   colorLineas = document.getElementById('colorLineas').value;
+  // Dibuja la cuadrícula al cambiar el color de las líneas
   dibujarCuadricula();
 }
 
-
-function formatearNumero(numero) {
-    return numero < 10 ? '0' + numero : numero.toString();
-      }
-
-
-      
-
-
-
-// Dibujar cuadrícula con colores iniciales
-dibujarCuadricula();
-
 function dibujarCuadricula() {
-            // Elimina la imagen de fondo existente si hay una
-            //contexto.clearRect(0, 0, portada-4, portada-4);
-  // Dibujar el rectángulo de fondo
-  contexto.fillStyle = colorFondo;
-  contexto.fillRect(0, 0, canvas.width, canvas.height);
-
   // Dibujar la cuadrícula y los números
   for (var i = 0; i < cuadrosPorLado; i++) {
     for (var j = 0; j < cuadrosPorLado; j++) {
@@ -55,27 +40,9 @@ function dibujarCuadricula() {
       contexto.lineWidth = 5;
       contexto.strokeStyle = colorLineas;
       contexto.strokeRect(x, y + portada, (canvas.width) / 10, (canvas.height - portada) / 10);
-
-      // Dibujar el número en el centro del cuadro con el nuevo color de números
-      contexto.fillStyle = colorNumeros;
-      contexto.font = '20px Arial'; 
-      contexto.textAlign = 'center';
-      contexto.textBaseline = 'middle';
-      var numero = i * cuadrosPorLado + j;
-      var numeroFormateado = formatearNumero(numero);
-     
-      contexto.fillText(numeroFormateado, x + (canvas.width) / (cuadrosPorLado * 2), y + portada + (canvas.height - portada) / (cuadrosPorLado * 2));
-
     }
   }
-  
-
-
-
-  cargarImagenDeFondo()
 }
-
-
 
 // Función para descargar la imagen
 function descargarImagen() {
@@ -86,24 +53,20 @@ function descargarImagen() {
 }
 
 function cargarImagenDeFondo() {
-    var input = document.getElementById('imagenFondoInput');
-    var archivo = input.files[0];
-    
-  
-    if (archivo) {
-        
+  var input = document.getElementById('imagenFondoInput');
+  var archivo = input.files[0];
 
-      // Código para cargar la imagen de fondo y dibujarla en el canvas
-      var imagenFondo = new Image();
-      imagenFondo.onload = function() {
-        // Dibuja la imagen en el canvas:
-        contexto.drawImage(imagenFondo, 0, 0, canvas.width, (canvas.height));
-      };
-      imagenFondo.src = URL.createObjectURL(archivo);
-    }
-    
+  if (archivo) {
+    var imagenFondo = new Image();
+    imagenFondo.onload = function () {
+      // Dibuja la imagen de fondo
+      contexto.drawImage(imagenFondo, 0, 0, canvas.width, canvas.height);
+      
+      // Dibuja la cuadrícula después de cargar la nueva imagen
+      dibujarCuadricula();
+    };
+    imagenFondo.src = URL.createObjectURL(archivo);
   }
-  
-
+}
 
 
