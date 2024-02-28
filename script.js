@@ -90,8 +90,7 @@ function cargarImagenDeFondo() {
         var alto = imagenFondo.height;
         console.log(ancho, alto);
         if(alto > ancho){
-            //anchoproporcional = (ancho * canvas.width)/alto;
-            //contexto.drawImage(imagenFondo, 0, 0, anchoproporcional ,canvas.height)
+            
             canvas.width=400;
             canvas.height=400;
             factor=alto/ancho;
@@ -101,15 +100,14 @@ function cargarImagenDeFondo() {
         }
         else{
       // Dibuja la imagen de fondo
-      //altoproporcional = (alto * canvas.width)/ancho;
-      //contexto.drawImage(imagenFondo, 0, 0, canvas.width, altoproporcional);
+      
        canvas.width=400;
        canvas.height=400;
         factor=ancho/alto;
         console.log('ancho/alto:', ancho, '/', alto, '=', ancho/alto);
         var nuevoAncho = canvas.width * factor;
         var nuevoAlto = canvas.height;
-        //console.log('valor windows H: ', window.innerHeight, 'valoer windows W: ', window.innerWidth)
+        
         console.log('Nuevo ancho: ', nuevoAncho, 'Nuevo alto: ', nuevoAlto);
         canvas.width = nuevoAncho;
         canvas.height= nuevoAlto;

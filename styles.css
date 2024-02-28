@@ -1,18 +1,68 @@
 ul {
-    list-style-type: none; /* Elimina el estilo predeterminado de las viñetas */
-    padding: 0; /* Elimina el espacio interior predeterminado de la lista */
-    margin: 0; /* Elimina el margen predeterminado de la lista */
-  }
-  #portada{
-    position:absolute;
-    top: 60px !important;
-    background-color: rgb(72, 69, 179);
-    color: white;
-    font-family: 'Ubuntu Mono', monospace;
-    font-size: 18px;
-    height: 100px;
-  }
-  #carton{
-    position: relative;
-    top: 180px !important;
-  }
+  list-style-type: none; /* Elimina el estilo predeterminado de las viñetas */
+  padding: 0; /* Elimina el espacio interior predeterminado de la lista */
+  margin: 0; /* Elimina el margen predeterminado de la lista */
+}
+#portada{
+  position:absolute;
+  top: 60px !important;
+  background-color: rgb(72, 69, 179);
+  color: white;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 18px;
+  height: 100px;
+}
+#carton{
+  position: relative;
+  top: 180px !important;
+}
+body {
+  background-image: url('../recursos/fondo.webp');
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Añadido para apilar elementos verticalmente */
+  align-items: center;
+  background-size: cover;
+}
+
+h6 {
+  border-bottom: 2px solid #969696;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 10px; /* Añadido un margen inferior */
+}
+
+.contenido {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.059);
+  padding: 20px;
+  border-radius: 10px;
+  /*overflow: hidden;
+  /*max-height: 100vh; */
+  /*flex-grow: 1; /* Permitir crecer dinámicamente */
+  margin-top: 20px;
+}
+.contenido2 {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.059);
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 69px;
+}
+
+.contenido img {
+  width: 100px;
+  filter: drop-shadow(1px 1px 2px rgba(255, 255, 255, 0.239));
+  transition: 2s;
+}
+.contenido img:hover{
+  filter: drop-shadow(1px 1px 2px rgba(255, 255, 255, 0));
+  background-color: #d3d3d340;
+  border-radius: 50%;
+  padding: 10px;
+  transition: 2s;
+  border:8px solid #201d2a;
+  box-shadow: 1px 1px 1px rgba(55, 55, 55, 0.397);
+}
