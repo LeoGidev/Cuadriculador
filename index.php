@@ -26,10 +26,11 @@ include 'recursos/barra.php';
 ?>
 </header>
 <div class='container'>
-<div class='row'>
-    <div class="contenido2">
+  <div class='row justify-content-center'>
+    <div class="col-12 contenido2">
     <h4> Crea Cuadrículas </h4>
     </div>
+  </div>
     <div class='col-12 controles container'>
           <ul>
             <li>

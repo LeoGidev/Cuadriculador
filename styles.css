@@ -7,9 +7,6 @@ ul {
 body {
   background-image: url('recursos/fondo.webp');
   margin: 0;
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
   background-size: cover;
 }
 .controles{
@@ -28,6 +25,9 @@ h4 {
   background-color: rgba(255, 255, 255, 0.059);
   padding: 20px;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
   flex-grow: 1; /* Permitir crecer dinámicamente */
   margin-top: 20px;
