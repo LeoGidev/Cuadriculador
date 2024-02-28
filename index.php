@@ -22,7 +22,7 @@
     <header>
         <!-- Barra de navegación -->
         <?php
-include '../recursos/barra.php';       
+include 'recursos/barra.php';       
 ?>
 </header>
     <div class="contenido2">
