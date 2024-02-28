@@ -3,29 +3,19 @@ ul {
   padding: 0; /* Elimina el espacio interior predeterminado de la lista */
   margin: 0; /* Elimina el margen predeterminado de la lista */
 }
-#portada{
-  position:absolute;
-  top: 60px !important;
-  background-color: rgb(72, 69, 179);
-  color: white;
-  font-family: 'Ubuntu Mono', monospace;
-  font-size: 18px;
-  height: 100px;
-}
-#carton{
-  position: relative;
-  top: 180px !important;
-}
+
 body {
   background-image: url('recursos/fondo.webp');
   margin: 0;
-  display: flex;
-  flex-direction: column; /* Añadido para apilar elementos verticalmente */
-  align-items: center;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
   background-size: cover;
 }
-
-h6 {
+.controles{
+  color:white;
+}
+h4 {
   border-bottom: 2px solid #969696;
   font-family: 'Ubuntu Mono', monospace;
   font-size: 20px;
@@ -38,9 +28,8 @@ h6 {
   background-color: rgba(255, 255, 255, 0.059);
   padding: 20px;
   border-radius: 10px;
-  /*overflow: hidden;
-  /*max-height: 100vh; */
-  /*flex-grow: 1; /* Permitir crecer dinámicamente */
+  
+  flex-grow: 1; /* Permitir crecer dinámicamente */
   margin-top: 20px;
 }
 .contenido2 {

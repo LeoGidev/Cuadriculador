@@ -25,11 +25,13 @@
 include 'recursos/barra.php';       
 ?>
 </header>
+<div class='container'>
+<div class='row'>
     <div class="contenido2">
-    <h6> Crea Cuadrículas </6>
+    <h4> Crea Cuadrículas </h4>
     </div>
-    <div class='controles'>
-    <ul>
+    <div class='col-12 controles container'>
+          <ul>
             <li>
               <label for="colorLineas">Color de las líneas:</label>
               <input class="form-control form-control-color" type="color" id="colorLineas" value="#00ff00" onchange="cambiarColorLineas()">
@@ -49,9 +51,11 @@ include 'recursos/barra.php';
        <canvas id="miCanvas" width="300" height="400" style="border:1px solid #000;" name="tablero"></canvas> 
     </div>
     
-    <div class="contenido">
+    <div class="contenido container">
     <a href="https://github.com/LeoGidev/Cuadriculador" target="_blank"><img src="../../img/GitHub-logo.webp"></a>
         </div>
+
+</div>
         <script src="script.js"></script>
 </body>
   
